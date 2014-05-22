@@ -1,5 +1,5 @@
 ## These functions return the inverse of a matrix. If this inverse has already been computed and cached
-## and the matrix has not changed, the cached value is returned. These functiona assume that the matrix passed is 
+## and the matrix has not changed, the cached value is returned. These functions assume that the matrix passed is 
 ## inverible
 
 
