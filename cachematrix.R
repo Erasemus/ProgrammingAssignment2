@@ -3,15 +3,15 @@
 ## inverible
 
 
-makeCacheMatrix <- function(x = matrix()) {
-m <- NULL
+<- function(x = numeric()) {
+        i <- NULL
         set <- function(y) {
                 x <<- y
-                m <<- NULL
+                i <<- NULL
         }
         get <- function() x
-        setinverse <- function(inverse) m <<- inverse
-        getinverse <- function() m
+        setinverse <- function(solve) i <<- solve
+        getinverse <- function() i
         list(set = set, get = get,
              setinverse = setinverse,
              getinverse = getinverse)
@@ -22,13 +22,14 @@ m <- NULL
 ## `cachesolve` retrieves the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
-        m <- x$getinverse()
-        if(!is.null(m)) {
-                 message("getting cached data")
-        return(m)
-        }
+        i <- x$getinverse()
+        if(!is.null(i)) {
+                message("getting cached data")
+                return(i)
+                        }
         data <- x$get()
-        m <- solve(data, ...)
-        x$setinverse(m)
-        m
+        i <- solve(data, ...)
+        x$setinverse(i)
+        i
+        }
 }
