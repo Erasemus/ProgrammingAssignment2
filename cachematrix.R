@@ -1,9 +1,9 @@
 ## These functions return the inverse of a matrix. If this inverse has already been computed and cached
 ## and the matrix has not changed, the cached value is returned. These functions assume that the matrix passed is 
-## inverible
+## invertible
 
 
-<- function(x = numeric()) {
+makeVectorCache<- function(x = numeric()) { ## Build a list of functions for managing cached results
         i <- NULL
         set <- function(y) {
                 x <<- y
